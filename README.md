@@ -90,4 +90,4 @@ To get the contact form working on your own fork:
 
 ---
 
-_Built with passion and clean architecture._
+_Built with passion._
