@@ -39,7 +39,7 @@ export function IndexPage() {
         <div className="glass-panel rounded-lg overflow-hidden mb-8">
           <div className="h-8 flex items-center px-3 bg-obsidian-surface border-b border-obsidian-border">
             <Terminal size={14} className="text-obsidian-muted mr-2" />
-            <span className="text-xs text-obsidian-muted">zsh — portfolio</span>
+            <span className="text-xs text-obsidian-muted">Karan — portfolio</span>
           </div>
           <div className="p-4 font-mono text-sm leading-relaxed">
             {TERMINAL_LOGS.slice(0, visibleLines).map((log, idx) => (
@@ -73,21 +73,21 @@ export function IndexPage() {
             <div className="flex gap-2">
               <span className="text-obsidian-property">name</span>
               <span className="text-obsidian-text">:</span>
-              <span className="text-obsidian-string">"Alex Chen"</span>
+              <span className="text-obsidian-string">"Karan Bastola"</span>
               <span className="text-obsidian-text">,</span>
             </div>
             <div className="flex gap-2">
               <span className="text-obsidian-property">title</span>
               <span className="text-obsidian-text">:</span>
               <span className="text-obsidian-string">
-                "Senior Frontend Engineer"
+                "Full-Stack Developer"
               </span>
               <span className="text-obsidian-text">,</span>
             </div>
             <div className="flex gap-2">
               <span className="text-obsidian-property">location</span>
               <span className="text-obsidian-text">:</span>
-              <span className="text-obsidian-string">"San Francisco, CA"</span>
+              <span className="text-obsidian-string">"Itahari, Nepal"</span>
               <span className="text-obsidian-text">,</span>
             </div>
             <div className="flex gap-2 flex-wrap">
@@ -96,18 +96,20 @@ export function IndexPage() {
               <span className="text-obsidian-text">[</span>
               <span className="text-obsidian-string">"React"</span>
               <span className="text-obsidian-text">,</span>
+              <span className="text-obsidian-string">".NET"</span>
+              <span className="text-obsidian-text">,</span>
               <span className="text-obsidian-string">"TypeScript"</span>
               <span className="text-obsidian-text">,</span>
-              <span className="text-obsidian-string">"Design Systems"</span>
+              <span className="text-obsidian-string">"PostgreSQL"</span>
               <span className="text-obsidian-text">,</span>
-              <span className="text-obsidian-string">"Performance"</span>
+              <span className="text-obsidian-string">"Clean Architecture"</span>
               <span className="text-obsidian-text">]</span>
               <span className="text-obsidian-text">,</span>
             </div>
             <div className="flex gap-2">
               <span className="text-obsidian-property">experience</span>
               <span className="text-obsidian-text">:</span>
-              <span className="text-obsidian-number">8</span>
+              <span className="text-obsidian-number">3</span>
               <span className="text-obsidian-text">,</span>
               <span className="text-obsidian-comment">// years</span>
             </div>
@@ -115,8 +117,7 @@ export function IndexPage() {
               <span className="text-obsidian-property">passion</span>
               <span className="text-obsidian-text">:</span>
               <span className="text-obsidian-string">
-                "Building pixel-perfect, accessible, and performant user
-                interfaces"
+                "Building robust full-stack applications with clean architecture"
               </span>
               <span className="text-obsidian-text">,</span>
             </div>
