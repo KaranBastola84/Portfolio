@@ -2,7 +2,7 @@
 
 A highly interactive, developer-focused portfolio designed to look and feel like the **Visual Studio Code** editor. Built with modern web technologies, it features an interactive file explorer, functioning command palette, syntax-highlighted themes, and a fully working contact form.
 
-![Portfolio Preview](./public/preview.png) _(You can add a screenshot of your app here)_
+![Portfolio Preview](./public/preview.png) 
 
 ## 🚀 Features
 
