@@ -118,7 +118,7 @@ export default function App() {
           onClick={() => setCommandPaletteOpen(false)}
         >
           <div
-            className="w-full max-w-[500px] glass-panel rounded-lg shadow-2xl overflow-hidden glow-active font-mono"
+            className="w-full max-w-125 glass-panel rounded-lg shadow-2xl overflow-hidden glow-active font-mono"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center px-3 py-3 border-b border-obsidian-border bg-obsidian-surface/60">

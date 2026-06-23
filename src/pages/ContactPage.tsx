@@ -252,7 +252,7 @@ export function ContactPage() {
             <button
               className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-sm text-xs font-bold font-mono transition-all cursor-pointer ${
                 isValid && !submitting && !submitted
-                  ? "bg-gradient-to-r from-primary to-secondary text-white shadow-md hover:opacity-95 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 border-0"
+                  ? "bg-linear-to-r from-primary to-secondary text-white shadow-md hover:opacity-95 hover:-translate-y-0.5 active:translate-y-0 active:scale-95 border-0"
                   : submitted
                     ? "bg-tertiary/10 text-tertiary border border-tertiary/30 cursor-default"
                     : "bg-obsidian-surface text-obsidian-dim border border-obsidian-border cursor-not-allowed"

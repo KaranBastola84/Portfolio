@@ -148,7 +148,7 @@ function CodeBlock({ code, filename }: { code: string; filename: string }) {
         {/* Code Content */}
         <div className="pl-4 flex-1 flex flex-col min-w-0">
           {lines.map((line, i) => (
-            <span key={i} className="min-h-[20px] whitespace-pre block leading-[1.7]">
+            <span key={i} className="min-h-5 whitespace-pre block leading-[1.7]">
               {highlight(line)}
             </span>
           ))}
@@ -304,7 +304,7 @@ export function SkillsPage() {
       </div>
 
       {/* Hook Playground */}
-      <div className="w-full lg:w-[400px] shrink-0 border-t lg:border-t-0 lg:border-l border-obsidian-border bg-obsidian-surface/40 backdrop-blur-md p-4 md:p-6 overflow-auto select-none">
+      <div className="w-full lg:w-100 shrink-0 border-t lg:border-t-0 lg:border-l border-obsidian-border bg-obsidian-surface/40 backdrop-blur-md p-4 md:p-6 overflow-auto select-none">
         <div className="flex items-center gap-2 mb-4">
           <Zap size={14} className="text-secondary" />
           <span className="text-[10px] font-bold text-obsidian-muted uppercase tracking-wider font-mono">
