@@ -1,7 +1,9 @@
+import { useEffect, useState, useCallback} from "react";
+import { IndexPage } from "./pages/IndexPage";
 function App() {
   return (
     <div>
-      <h1 className="text-3xl font-bold"> Hi my name is karan and this is my dev</h1>
+      <IndexPage />
     </div>
   )
 }
