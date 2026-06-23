@@ -1,1 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Geist", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Custom Obsidian Syntax Colors */
+  --color-surface: #0b1326;
+  --color-surface-dim: #0b1326;
+  --color-surface-bright: #31394d;
+  --color-surface-container-lowest: #060e20;
+  --color-surface-container-low: #131b2e;
+  --color-surface-container: #171f33;
+  --color-surface-container-high: #222a3d;
+  --color-surface-container-highest: #2d3449;
+  --color-on-surface: #dae2fd;
+  --color-on-surface-variant: #bdc8d1;
+  --color-inverse-surface: #dae2fd;
+  --color-inverse-on-surface: #283044;
+  --color-outline: #87929a;
+  --color-outline-variant: #3e484f;
+  --color-surface-tint: #7bd0ff;
+  --color-primary: #8ed5ff;
+  --color-on-primary: #00354a;
+  --color-primary-container: #38bdf8;
+  --color-on-primary-container: #004965;
+  --color-inverse-primary: #00668a;
+  --color-secondary: #ddb8ff;
+  --color-on-secondary: #490081;
+  --color-secondary-container: #62259b;
+  --color-on-secondary-container: #d1a1ff;
+  --color-tertiary: #45e3ce;
+  --color-on-tertiary: #003731;
+  --color-tertiary-container: #07c7b2;
+  --color-on-tertiary-container: #004d44;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-primary-fixed: #c4e7ff;
+  --color-primary-fixed-dim: #7bd0ff;
+  --color-on-primary-fixed: #001e2c;
+  --color-on-primary-fixed-variant: #004c69;
+  --color-secondary-fixed: #f0dbff;
+  --color-secondary-fixed-dim: #ddb8ff;
+  --color-on-secondary-fixed: #2c0051;
+  --color-on-secondary-fixed-variant: #62259b;
+  --color-tertiary-fixed: #62fae3;
+  --color-tertiary-fixed-dim: #3cddc7;
+  --color-on-tertiary-fixed: #00201c;
+  --color-on-tertiary-fixed-variant: #005047;
+  --color-background: #0b1326;
+  --color-on-background: #dae2fd;
+  --color-surface-variant: #2d3449;
+
+  /* Map obsidian- prefixed colors to align with our custom colors */
+  --color-obsidian-bg: var(--color-background);
+  --color-obsidian-surface: var(--color-surface-container-low);
+  --color-obsidian-elevated: var(--color-surface-container);
+  --color-obsidian-hover: var(--color-surface-container-high);
+  --color-obsidian-border: var(--color-outline-variant);
+  --color-obsidian-text: var(--color-on-surface);
+  --color-obsidian-muted: var(--color-on-surface-variant);
+  --color-obsidian-dim: var(--color-outline);
+  --color-obsidian-accent: var(--color-primary);
+  --color-obsidian-accentGlow: rgba(142, 213, 255, 0.15);
+  --color-obsidian-success: var(--color-tertiary);
+  --color-obsidian-warning: var(--color-secondary);
+  --color-obsidian-error: var(--color-error);
+  --color-obsidian-string: var(--color-tertiary);
+  --color-obsidian-keyword: var(--color-secondary);
+  --color-obsidian-function: var(--color-primary);
+  --color-obsidian-number: var(--color-primary-fixed-dim);
+  --color-obsidian-comment: var(--color-outline);
+  --color-obsidian-property: var(--color-primary);
+
+  /* Spacing */
+  --spacing-base: 8px;
+  --spacing-xs: 4px;
+  --spacing-sm: 12px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 80px;
+  --spacing-gutter: 24px;
+  --spacing-container-max: 1200px;
+
+  /* Border Radii */
+  --radius-sm: 0.125rem;
+  --radius-DEFAULT: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: var(--color-background);
+    color: var(--color-on-surface);
+    font-family: "Geist", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-outline-variant) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-outline-variant);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-outline);
+  }
+
+  ::selection {
+    background: rgba(142, 213, 255, 0.15);
+    color: var(--color-primary);
+  }
+}
+
+@layer components {
+  /* Glassmorphic Layer */
+  .glass-panel {
+    background: rgba(19, 27, 46, 0.65);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--color-outline-variant);
+    /* Top-Left Highlight technique */
+    border-top-color: rgba(218, 226, 253, 0.15);
+    border-left-color: rgba(218, 226, 253, 0.15);
+    border-bottom-color: rgba(62, 72, 79, 0.4);
+    border-right-color: rgba(62, 72, 79, 0.4);
+  }
+
+  /* Active glow shadow */
+  .glow-active {
+    box-shadow: 0 0 32px 4px rgba(142, 213, 255, 0.08);
+  }
+
+  /* Code-styled bullet points for lists */
+  .code-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .code-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .code-list li::before {
+    content: "->";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  /* Custom Typographies */
+  .font-display-lg {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  .font-display-lg-mobile {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .font-headline-md {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .font-body-lg {
+    font-family: "Geist", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .font-body-md {
+    font-family: "Geist", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .font-label-sm {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+  }
+
+  .font-code-block {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  .syntax-keyword {
+    color: var(--color-secondary);
+  }
+  .syntax-string {
+    color: var(--color-tertiary);
+  }
+  .syntax-function {
+    color: var(--color-primary);
+  }
+  .syntax-comment {
+    color: var(--color-outline);
+    font-style: italic;
+  }
+  .syntax-number {
+    color: var(--color-primary-fixed-dim);
+  }
+  .syntax-property {
+    color: var(--color-primary);
+  }
+  .syntax-tag {
+    color: var(--color-error);
+  }
+  .syntax-attr {
+    color: var(--color-primary);
+  }
+}
+
+@layer utilities {
+  .cursor-blink {
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+}

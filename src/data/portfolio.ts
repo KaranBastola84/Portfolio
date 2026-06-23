@@ -250,11 +250,6 @@ export const TERMINAL_LOGS = [
     timestamp: "09:00:00.678",
   },
   {
-    level: "info",
-    message: "Watching for changes...",
-    timestamp: "09:00:00.701",
-  },
-  {
     level: "success",
     message: "Initialization successful. Welcome to the dev environment.",
     timestamp: "09:00:00.789",
