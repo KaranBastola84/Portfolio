@@ -178,7 +178,7 @@ export default function App() {
 
       {/* Mobile menu toggle */}
       <button
-        className="fixed bottom-10 right-4 z-40 md:hidden w-10 h-10 rounded-lg bg-primary hover:bg-primary-container text-obsidian-bg flex items-center justify-center shadow-lg border border-primary-fixed-dim/40 cursor-pointer font-bold"
+        className="fixed bottom-10 right-4 z-40 md:hidden w-12 h-12 rounded-lg bg-primary hover:bg-primary-container text-obsidian-bg flex items-center justify-center shadow-lg border border-primary-fixed-dim/40 cursor-pointer font-bold"
         onClick={() => setMobileOpen(true)}
       >
         menu
