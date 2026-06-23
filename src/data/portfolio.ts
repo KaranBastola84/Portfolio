@@ -91,6 +91,7 @@ export const PROJECTS: Project[] = [
     timeline: "2025 — 2026",
     status: "In Progress",
     tags: ["React", ".NET", "PostgreSQL", "FYP"],
+    repoUrl:"https://github.com/KaranBastola84/cms-frontend",
     stats: [
       { label: "Type", value: "FYP / Client Project" },
       { label: "Deployment", value: "Planned" },
