@@ -6,6 +6,7 @@ import { IndexPage } from "./pages/IndexPage";
 import { ContactPage } from "./pages/ContactPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
 import { SkillsPage } from "./pages/SkillsPage";
+import { SEO } from "./components/SEO";
 
 export type PageTab =
   | "index.js"
@@ -55,8 +56,51 @@ export default function App() {
     t.toLowerCase().includes(commandPaletteQuery.toLowerCase()),
   );
 
+  const getSeoContent = () => {
+    switch (activeTab) {
+      case "index.js":
+        return {
+          title: "Home - Software Engineer",
+          description: "Welcome to Karan Bastola's portfolio. View my experience in React, specialized modern web applications, and more.",
+          url: "/",
+          keywords: "Karan Bastola, Software Engineer, React Developer, Frontend Developer, Web Developer, Portfolio Home"
+        };
+      case "projects.json":
+        return {
+          title: "Projects",
+          description: "Explore the projects Karan Bastola has worked on, including full-stack and frontend React applications.",
+          url: "/projects",
+          keywords: "Projects, React Projects, Full-Stack Projects, Web Development Portfolio, Karan Bastola Projects"
+        };
+      case "skills.css":
+        return {
+          title: "Skills & Technologies",
+          description: "Detailed overview of Karan Bastola's technical skills, including React, TypeScript, Tailwind CSS, and .NET.",
+          url: "/skills",
+          keywords: "Skills, Technical Skills, React, TypeScript, Tailwind CSS, .NET, Programming Languages"
+        };
+      case "contact.ts":
+        return {
+          title: "Contact",
+          description: "Get in touch with Karan Bastola. Open to freelance opportunities, frontend development roles, and networking.",
+          url: "/contact",
+          keywords: "Contact, Hire Frontend Developer, React Developer Contact, Freelance Web Developer"
+        };
+      default:
+        return {
+          title: "Portfolio",
+          description: "Karan Bastola's developer portfolio.",
+          url: "/",
+          keywords: "Karan Bastola, Software Engineer, Web Developer"
+        };
+    }
+  };
+
+  const seoData = getSeoContent();
+
   return (
     <div className="h-screen w-screen flex flex-col bg-obsidian-bg text-obsidian-text font-sans overflow-hidden relative">
+      <SEO {...seoData} />
       {/* Ambient monitor glows */}
       <div className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vh] rounded-full bg-primary/8 blur-[120px] pointer-events-none z-0" />
       <div className="absolute bottom-[-10%] left-[-10%] w-[60vw] h-[60vh] rounded-full bg-secondary/5 blur-[150px] pointer-events-none z-0" />
