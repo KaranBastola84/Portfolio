@@ -7,6 +7,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
 import { SkillsPage } from "./pages/SkillsPage";
 import { SEO } from "./components/SEO";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export type PageTab =
   | "index.js"
@@ -15,8 +16,29 @@ export type PageTab =
   | "contact.ts"
   | "tools.ts";
 
+const tabToPath: Record<PageTab, string> = {
+  "index.js": "/",
+  "projects.json": "/projects",
+  "skills.css": "/skills",
+  "contact.ts": "/contact",
+  "tools.ts": "/tools",
+};
+
+// Derived from tabToPath so the two maps can never drift apart.
+const pathToTab: Record<string, PageTab> = (
+  Object.keys(tabToPath) as PageTab[]
+).reduce<Record<string, PageTab>>((acc, tab) => {
+  acc[tabToPath[tab]] = tab;
+  return acc;
+}, {});
+
 export default function App() {
-  const [activeTab, setActiveTab] = useState<PageTab>("index.js");
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+  const normalizedPath =
+    pathname !== "/" ? pathname.replace(/\/+$/, "") : pathname;
+  const activeTab: PageTab = pathToTab[normalizedPath] ?? "index.js";
+
   const [sidebarVisible, setSidebarVisible] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
@@ -30,10 +52,13 @@ export default function App() {
     "tools.ts",
   ];
 
-  const openTab = useCallback((tab: PageTab) => {
-    setActiveTab(tab);
-    setMobileOpen(false);
-  }, []);
+  const openTab = useCallback(
+    (tab: PageTab) => {
+      navigate(tabToPath[tab]);
+      setMobileOpen(false);
+    },
+    [navigate],
+  );
 
   const toggleSidebar = useCallback(() => {
     setSidebarVisible((v) => !v);
