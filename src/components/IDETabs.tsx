@@ -14,6 +14,7 @@ const tabColor: Record<PageTab, string> = {
   "projects.json": "text-primary",
   "skills.css": "text-tertiary",
   "contact.ts": "text-primary-fixed-dim",
+  "tools.ts": "text-primary-fixed-dim",
 };
 
 export function IDETabs({

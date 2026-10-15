@@ -26,6 +26,7 @@ const TAB_CONFIG: { tab: PageTab; label: string; icon: React.ReactNode }[] = [
   },
   { tab: "skills.css", label: "skills.css", icon: <FileText size={14} className="text-tertiary" /> },
   { tab: "contact.ts", label: "contact.ts", icon: <FileType size={14} className="text-primary-fixed-dim" /> },
+  { tab: "tools.ts", label: "tools.ts", icon: <FileType size={14} className="text-tertiary" /> },
 ];
 
 export function IDESidebar({
