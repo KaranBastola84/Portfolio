@@ -6,6 +6,7 @@ import { IndexPage } from "./pages/IndexPage";
 import { ContactPage } from "./pages/ContactPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
 import { SkillsPage } from "./pages/SkillsPage";
+import { Tools } from "./pages/Tools";
 import { SEO } from "./components/SEO";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -88,37 +89,54 @@ export default function App() {
       case "index.js":
         return {
           title: "Home - Software Engineer",
-          description: "Welcome to Karan Bastola's portfolio. View my experience in React, specialized modern web applications, and more.",
+          description:
+            "Welcome to Karan Bastola's portfolio. View my experience in React, specialized modern web applications, and more.",
           url: "/",
-          keywords: "Karan Bastola, Software Engineer, React Developer, Frontend Developer, Web Developer, Portfolio Home"
+          keywords:
+            "Karan Bastola, Software Engineer, React Developer, Frontend Developer, Web Developer, Portfolio Home",
         };
       case "projects.json":
         return {
           title: "Projects",
-          description: "Explore the projects Karan Bastola has worked on, including full-stack and frontend React applications.",
+          description:
+            "Explore the projects Karan Bastola has worked on, including full-stack and frontend React applications.",
           url: "/projects",
-          keywords: "Projects, React Projects, Full-Stack Projects, Web Development Portfolio, Karan Bastola Projects"
+          keywords:
+            "Projects, React Projects, Full-Stack Projects, Web Development Portfolio, Karan Bastola Projects",
         };
       case "skills.css":
         return {
           title: "Skills & Technologies",
-          description: "Detailed overview of Karan Bastola's technical skills, including React, TypeScript, Tailwind CSS, and .NET.",
+          description:
+            "Detailed overview of Karan Bastola's technical skills, including React, TypeScript, Tailwind CSS, and .NET.",
           url: "/skills",
-          keywords: "Skills, Technical Skills, React, TypeScript, Tailwind CSS, .NET, Programming Languages"
+          keywords:
+            "Skills, Technical Skills, React, TypeScript, Tailwind CSS, .NET, Programming Languages",
         };
       case "contact.ts":
         return {
           title: "Contact",
-          description: "Get in touch with Karan Bastola. Open to freelance opportunities, frontend development roles, and networking.",
+          description:
+            "Get in touch with Karan Bastola. Open to freelance opportunities, frontend development roles, and networking.",
           url: "/contact",
-          keywords: "Contact, Hire Frontend Developer, React Developer Contact, Freelance Web Developer"
+          keywords:
+            "Contact, Hire Frontend Developer, React Developer Contact, Freelance Web Developer",
+        };
+      case "tools.ts":
+        return {
+          title: "Tools",
+          description:
+            "A growing collection of small developer tools by Karan Bastola. This section is currently under construction.",
+          url: "/tools",
+          keywords:
+            "Developer Tools, Web Tools, Readme Generator, Karan Bastola Tools",
         };
       default:
         return {
           title: "Portfolio",
           description: "Karan Bastola's developer portfolio.",
           url: "/",
-          keywords: "Karan Bastola, Software Engineer, Web Developer"
+          keywords: "Karan Bastola, Software Engineer, Web Developer",
         };
     }
   };
@@ -172,6 +190,7 @@ export default function App() {
             {activeTab === "projects.json" && <ProjectsPage />}
             {activeTab === "skills.css" && <SkillsPage />}
             {activeTab === "contact.ts" && <ContactPage />}
+            {activeTab === "tools.ts" && <Tools />}
           </div>
         </div>
       </div>
@@ -221,7 +240,9 @@ export default function App() {
                     setCommandPaletteOpen(false);
                   }}
                 >
-                  <span className="text-obsidian-muted font-semibold">{"{"}</span>
+                  <span className="text-obsidian-muted font-semibold">
+                    {"{"}
+                  </span>
                   <span
                     className={
                       tab === activeTab
@@ -231,9 +252,13 @@ export default function App() {
                   >
                     {tab}
                   </span>
-                  <span className="text-obsidian-muted font-semibold">{"}"}</span>
+                  <span className="text-obsidian-muted font-semibold">
+                    {"}"}
+                  </span>
                   {tab === activeTab && (
-                    <span className="ml-auto text-[10px] text-obsidian-accent/60 uppercase font-bold tracking-wider">active</span>
+                    <span className="ml-auto text-[10px] text-obsidian-accent/60 uppercase font-bold tracking-wider">
+                      active
+                    </span>
                   )}
                 </button>
               ))}
