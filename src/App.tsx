@@ -12,7 +12,8 @@ export type PageTab =
   | "index.js"
   | "projects.json"
   | "skills.css"
-  | "contact.ts";
+  | "contact.ts"
+  | "tools.ts";
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<PageTab>("index.js");
@@ -26,6 +27,7 @@ export default function App() {
     "projects.json",
     "skills.css",
     "contact.ts",
+    "tools.ts",
   ];
 
   const openTab = useCallback((tab: PageTab) => {
